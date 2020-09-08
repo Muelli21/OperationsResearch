@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --background: #F5F5F5;
+    --background_card: #FFFFFF;
+
+    --font_gray: #787878;
+    --font_black: #000000;
+    --primary_element: #F3F3F3;
+    --primary_element_focused: #e2e2e2;
+
+
+    --light_yellow: #FFC89F;
+    --dark_yellow: #FFAC70;
+
+    --light_red: #FF9E9E;
+    --dark_red: #FF7B7B;
+
+    --light_blue: #C1E6F2;
+    --dark_blue: #8AD8F1;
+
+
+    --icon_size_normal: 55px;
+    --icon_size_small: 40px;
+    --header_width: 100px;
+    --content_margin: 40px;
+    --border_radius: 10px;
+    --border_radius_wide: 20px;
+    --card_width: 525px;
+    --card_margin_vertical: 50px;
+    --card_margin_horizontal: 25px;
+    --results_wrapper_height: 100px;
+
+    --scrollbar_width: 3px;
+}
+
+body {
+    top: 0;
+    bottom: 0; 
+    left: 0;
+    right: 0;
+
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body::-webkit-scrollbar {
+    width: var(--scrollbar_width);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--primary_element);
+    border-radius: 10px;
+}
+
+#content::-webkit-scrollbar {
+    width: var(--scrollbar_width);
+    height: var(--scrollbar_width);
+}
+
+#content::-webkit-scrollbar-thumb {
+    background: var(--font_gray);
+    border-radius: 10px;
+}
+
+.textWrapper::-webkit-scrollbar {
+    width: var(--scrollbar_width);
+    height:  var(--scrollbar_width);
+}
+
+.textWrapper::-webkit-scrollbar-thumb {
+    background: var(--font_gray);
+    border-radius: 10px;
+}
+
+.problemWrapper::-webkit-scrollbar {
+    width: var(--scrollbar_width);
+    height: var(--scrollbar_width);
+}
+
+.problemWrapper::-webkit-scrollbar-thumb {
+    background: var(--font_gray);
+    border-radius: 10px;
+}
+
+.resultDiv::-webkit-scrollbar {
+    width: var(--scrollbar_width);
+    height: var(--scrollbar_width);
+}
+
+.resultDiv::-webkit-scrollbar-thumb {
+    background: var(--font_gray);
+    border-radius: 10px;
+}
+
+.resultsWrapper::-webkit-scrollbar {
+    width: var(--scrollbar_width);
+    height: var(--scrollbar_width);
+}
+
+.resultsWrapper::-webkit-scrollbar-thumb {
+    background: var(--font_gray);
+    border-radius: 10px;
+}
+
+

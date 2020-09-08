@@ -1,0 +1,96 @@
+#mapWrapper {
+    width: calc(100vw - var(--header_width) - var(--card_width) - 3*var(--content_margin));
+}
+
+#map {
+    height: 100%; 
+    width: inherit;
+    border-radius: var(--border_radius);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inputWrapper {
+    margin-top: var(--card_margin_vertical);
+    display: flex; 
+    flex-direction: row;
+}
+
+.locationInput {
+    flex-grow: 1;
+
+    padding-left: var(--content_margin);
+    height: var(--icon_size_normal);
+    background-color: var(--primary_element);
+    border-radius: var(--border_radius);
+    border: none;
+    outline: none;
+    font-size: 120%;
+}
+
+.locationButton {
+    margin-left: var(--card_margin_horizontal);
+
+    width: var(--icon_size_normal);
+    height: var(--icon_size_normal);
+
+    border-radius: 50%;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+
+    background-color: var(--primary_element);
+}
+
+.resultsWrapper {
+    margin-top: var(--card_margin_horizontal);
+    border-radius: var(--border_radius);
+    background-color: var(--primary_element);
+}
+
+.resultButton {
+    display: block;
+    padding-left: var(--content_margin);
+    padding-right: var(--card_margin_horizontal);
+    padding-top: calc(var(--card_margin_horizontal)/2);
+    padding-bottom: calc(var(--card_margin_horizontal)/2);
+}
+
+.resultButton:first-of-type {
+    border-top-left-radius: var(--border_radius);
+    border-top-right-radius: var(--border_radius);
+    padding-top: var(--card_margin_horizontal);
+}
+
+.resultButton:last-of-type {
+    border-bottom-left-radius: var(--border_radius);
+    border-bottom-right-radius: var(--border_radius);
+    padding-bottom: var(--card_margin_horizontal);
+}
+
+.resultButton:hover {
+    background-color: var(--primary_element_focused);
+}
+
+.listWrapper {
+    margin-top: var(--card_margin_horizontal);
+}
+
+.listButton {
+    display: block;
+    height: var(--icon_size_normal);
+    background-color: var(--primary_element);
+    border-radius: var(--border_radius);
+    padding-left: var(--content_margin);
+    margin-top: var(--card_margin_horizontal);
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.listButton:first-of-type {
+    margin-top: 0px;
+}

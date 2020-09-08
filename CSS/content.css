@@ -1,0 +1,181 @@
+#content {
+    position: absolute;
+    width: calc(100vw - var(--header_width));
+    height: 100vh;
+    left: var(--header_width);
+
+    background-color: var(--background);
+    z-index: -10;
+    overflow-x: scroll;
+}
+
+#contentWrapper {
+    position: absolute;
+    height: calc(100% - 2*var(--content_margin));
+    margin: var(--content_margin);
+    
+    display: flex;
+    flex-direction: row; 
+   
+}
+
+.problemWrapper {
+    width: var(--card_width);
+    overflow-y: scroll;
+    height: 100%;
+    margin-right: var(--content_margin);
+
+    background-color: var(--background_card);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: var(--border_radius);
+
+    display: grid;
+}
+
+.problemWrapper h1{
+    margin: 0px;
+    font-weight: 300;
+}
+
+.problemContent {
+    margin-top: var(--card_margin_vertical);
+    margin-bottom: var(--card_margin_vertical);
+    margin-left: var(--card_margin_horizontal);
+    margin-right: var(--card_margin_horizontal);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.headlineWrapper {
+    font-size: 200%;
+}
+
+.descriptionHeadlineWrapper {
+    margin-top: auto;
+}
+
+.descriptionWrapper {
+    height: var(--card_width);
+}
+
+.textWrapper {
+    grid-area: text;
+    border-radius: var(--border_radius);
+    padding: var(--card_margin_horizontal);
+    text-align: left;
+    background-color: var(--primary_element);
+    color: var(--font_gray);
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.textWrapper p {
+    margin: 0px;
+}
+
+.pictureWrapper {
+    grid-area: picture;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+
+    border-radius: var(--border_radius);
+}
+
+.buttonWrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.primaryButton {
+    margin-top: var(--card_margin_horizontal);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: var(--border_radius_wide);
+    color: var(--background_card);
+}
+
+.secondaryButton {
+    text-decoration: underline;
+}
+
+.textWrapper .secondaryButton{
+    align-self: flex-end;
+    margin-top: auto;
+    color: black;
+}
+
+/* TSP card specific CSS */
+
+#tspProblemContent .descriptionWrapper {
+    display: grid;
+    grid-template-areas:
+    "text"
+    "picture";
+    grid-template-rows: 50% 50%;
+}
+
+#tspProblemContent .textWrapper{
+    margin-bottom: calc(var(--card_margin_horizontal)/2);
+}
+
+#tspProblemContent .pictureWrapper{
+    margin-top: calc(var(--card_margin_horizontal)/2);
+    background-image: url("../Resources/Map.jpg");
+}
+
+#tspProblemContent .primaryButton {
+    background-color: var(--dark_yellow);
+}
+
+/* WLP card specific CSS */
+
+#wlpProblemContent .descriptionWrapper {
+    display: grid;
+    grid-template-areas:
+    "text picture";
+    grid-template-columns: 50% 50%;
+}
+
+#wlpProblemContent .textWrapper{
+    margin-right: calc(var(--card_margin_horizontal)/2);
+}
+
+#wlpProblemContent .pictureWrapper{
+    margin-left: calc(var(--card_margin_horizontal)/2);
+    background-image: url("../Resources/Warehouse.jpg");
+}
+
+#wlpProblemContent .primaryButton {
+    background-color: var(--dark_red);
+}
+
+/* VRP card specific CSS */
+
+#vrpProblemContent .descriptionWrapper {
+    display: grid;
+    grid-template-areas:
+    "picture"
+    "text";
+    grid-template-rows: 50% 50%;
+}
+
+#vrpProblemContent .textWrapper{
+    margin-top: calc(var(--card_margin_horizontal)/2);
+}
+
+#vrpProblemContent .pictureWrapper{
+    margin-bottom: calc(var(--card_margin_horizontal)/2);
+    background-image: url("../Resources/Trucks.jpg");
+}
+
+#vrpProblemContent .primaryButton {
+    background-color: var(--dark_blue);
+}
+

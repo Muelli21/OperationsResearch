@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- IOS PWA compatibility -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="./Resources/Icon.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Loading CSS scripts -->
+    <link rel="stylesheet" type="text/css" href="CSS/Travelling Salesman/travellingSalesman.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/content.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/header.css" />
+
+    <!-- Loading leaflet -->
+    <link rel="stylesheet" href="APIs/Leaflet/leaflet.css" />
+
+    <script src="APIs/Leaflet/leaflet.js"></script>
+
+    <!-- Loading the necessary scripts -->
+    <script src="JavaScript/Interface/Travelling Salesman/frontend.js"></script>
+    <script src="JavaScript/Interface/Travelling Salesman/SolvingMethodEnum.js"></script>
+    <script src="JavaScript/Interface/Travelling Salesman/TravellingSalesman.js"></script>
+    <script src="JavaScript/Utils/sphereUtils.js"></script>
+    <script src="JavaScript/Utils/elementUtils.js"></script>
+    <script src="JavaScript/Utils/prototypeUtils.js"></script>
+
+    <!-- Loading SimplexAPI scripts -->
+    <script src="APIs/Algebra/algebra-0.2.6.min.js"></script>
+
+    <script src="APIs/SimplexAPI/LinearOptimization/LinearProgramComponents/Variable.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/LinearProgramComponents/Constraint.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/LinearProgramComponents/ObjectiveFunction.js"></script>
+
+    <script src="APIs/SimplexAPI/LinearOptimization/Simplex/Simplex.js"></script>
+
+    <script src="APIs/SimplexAPI/LinearOptimization/Simplex/SimplexTypes/PrimalSimplex.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Simplex/SimplexTypes/DualSimplex.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Simplex/SimplexTypes/BigM.js"></script>
+
+    <script src="APIs/SimplexAPI/LinearOptimization/Simplex/SimplexTableau/SimplexTableau.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Simplex/SimplexTableau/simplexTableauUtils.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Simplex/SimplexTableau/simplexTableauBuilder.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Simplex/SimplexTableau/bigMTableauBuilder.js"></script>
+
+    <script src="APIs/SimplexAPI/LinearOptimization/Enums/ProblemTypeEnum.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Enums/VariableTypeEnum.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Enums/ConstraintTypeEnum.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Enums/SimplexTypeEnum.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Enums/SimplexVariableTypeEnum.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/Enums/SimplexTableauStateEnum.js"></script>
+
+    <script src="APIs/SimplexAPI/LinearOptimization/BranchAndBound/Branch.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/BranchAndBound/BranchAndBound.js"></script>
+    <script src="APIs/SimplexAPI/LinearOptimization/BranchAndBound/BranchingRuleEnum.js"></script>
+
+    <script src="APIs/SimplexAPI/Mathematics/Matrix.js"></script>
+
+
+    <title>OperationsResearch</title>
+</head>
+
+<body>
+    <header id=mainHeader>
+        <div id="headerWrapper">
+            <a href="index.html" id="headerLogo">
+                <img src="Resources/Logo_Tight.png" alt="Logo" id="headerLogoImage">
+            </a>
+            <a href="travellingSalesman.html" class="problemLink" id="tspLink">
+                <div class="problemLinkWrapper">
+                    <p class="problemLinkText">T</p>
+                </div>
+            </a>
+            <a href="warehouseLocation.html" class="problemLink" id="wlpLink">
+                <div class="problemLinkWrapper">
+                    <p class="problemLinkText">W</p>
+                </div>
+            </a>
+            <a href="vehicleRouting.html" class="problemLink" id="vrpLink">
+                <div class="problemLinkWrapper">
+                    <p class="problemLinkText">V</p>
+                </div>
+            </a>
+            <a href="index.html" id="headerSettings">
+                <img src="Resources/SettingsIcon.png" alt="Settings" id="headerSettingsImage">
+            </a>
+        </div>
+    </header>
+
+    <section id="content">
+        <div id="contentWrapper">
+            <div class="problemWrapper">
+                <div class="problemContent" id="tspProblemContent">
+                    <div class="headlineWrapper">
+                        <h1>Travelling Salesman <br> Problem</h1>
+                    </div>
+                    <div class="inputWrapper">
+                        <input 
+                            type="text" 
+                            name="locationInput" 
+                            class="locationInput"
+                            id="tspLocationInput"
+                            placeholder="Search location..."
+                            oninput="searchInput()"
+                        >
+                        <a 
+                            href="#" 
+                            class="locationButton"
+                            onclick="addCurrentLocation()"
+                        >
+                            <div class="locationButtonWrapper">
+                                <p class="locationButtonText">+</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="resultsWrapper" id="tspResultsWrapper">
+                        
+                    </div>
+                    <div class="listWrapper" id="tspListWrapper">
+
+                    </div>
+                    <div class="buttonWrapper">
+                        <a 
+                        href="#" 
+                        class="primaryButton"
+                        onclick="solveTsp()"
+                        >Solve</a>
+                    </div>
+                </div>
+            </div>
+            <div id="mapWrapper">
+                <div id="map">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
